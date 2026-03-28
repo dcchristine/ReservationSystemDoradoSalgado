@@ -1,0 +1,261 @@
+/* ============================================
+   DORADO SALGADO GRAND HOTEL — Design System
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap");
+
+:root {
+  --navy: #4a2c2a;
+  --navy-light: #5c3835;
+  --navy-dark: #38201f;
+  --gold: #fa993e;
+  --gold-light: #fbb066;
+  --gold-dark: #e08329;
+  --cream: #a3b18a;
+  --cream-dark: #8f9c79;
+  --sage-green: #a3b18a;
+  --charcoal: #4a2c2a;
+  --charcoal-light: #5c3835;
+  --white: #ffffff;
+  --text-dark: #4a2c2a;
+  --text-muted: #5c3835;
+  --text-light: #e0e0e0;
+  --success: #2ecc71;
+  --warning: #f39c12;
+  --danger: #e74c3c;
+  --info: #3498db;
+  --font-body: "Inter", sans-serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.16);
+  --shadow-xl: 0 12px 60px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 4px 20px rgba(212, 168, 84, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+ul,
+ol {
+  list-style: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section {
+  padding: 100px 0;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.section-header .subtitle {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+}
+.section-header .gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  box-shadow: var(--shadow-gold);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(212, 168, 84, 0.45);
+}
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.btn-secondary:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.btn-dark:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+}
+.btn-outline-gold {
+  background: transparent;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+}
+.btn-outline-gold:hover {
+  background: var(--gold);
+  color: var(--white);
+}
+.btn-sm {
+  padding: 8px 20px;
+  font-size: 0.85rem;
+}
+.btn-lg {
+  padding: 18px 42px;
+  font-size: 1.05rem;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 18px 0;
+  transition: var(--transition);
+  background: transparent;
+}
+.navbar.scrolled {
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 12px 0;
+  box-shadow: var(--shadow-lg);
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.navbar-brand img {
+  height: 45px;
+  width: auto;
+  border-radius: 4px;
+}
+.navbar-brand .brand-text {
+  color: var(--white);
+}
+.navbar-brand .brand-text h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+.navbar-brand .brand-text span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-weight: 500;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nav-links a {
+  color: var(--white);
+  background: rgba(163, 177, 138, 0.3); /* Sage Green translucent */
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+  margin: 0 4px;
+}
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(163, 177, 138, 0.85); /* Solid Sage Green on hover */
+  color: var(--white);
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+.hamburger span {
+  width: 28px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}

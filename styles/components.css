@@ -1,0 +1,296 @@
+/* Part 2: Hero, Rooms, Amenities, Testimonials */
+
+/* HERO */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 46, 0.85) 0%,
+    rgba(22, 33, 62, 0.7) 50%,
+    rgba(26, 26, 46, 0.8) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 1s ease;
+}
+.hero-content .tagline {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.hero-content h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+.hero-content h2 span {
+  color: var(--gold);
+  font-style: italic;
+}
+.hero-content p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+}
+.hero-scroll a {
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+/* ROOM CARDS */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.room-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+.room-card .room-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+.room-card .room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+.room-card:hover .room-image img {
+  transform: scale(1.08);
+}
+.room-card .room-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--white);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+}
+.room-card .room-details {
+  padding: 28px;
+}
+.room-card .room-details h3 {
+  font-size: 1.4rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.room-card .room-details p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.room-card .room-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--cream-dark);
+}
+.room-card .room-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold-dark);
+  font-family: var(--font-heading);
+}
+.room-card .room-price small {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-family: var(--font-body);
+}
+.room-card .room-capacity {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.room-card .room-capacity i {
+  color: var(--gold);
+  margin-right: 4px;
+}
+
+/* AMENITIES */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.amenity-card {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--white);
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.amenity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+.amenity-card .amenity-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(163, 177, 138, 0.4); /* Light Sage Green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 1.5rem;
+  color: var(--gold);
+  transition: var(--transition);
+}
+.amenity-card:hover .amenity-icon {
+  background: var(--sage-green);
+  color: var(--white);
+  transform: scale(1.1);
+}
+.amenity-card h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.amenity-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* TESTIMONIALS */
+.testimonials-section {
+  background: var(--navy);
+  color: var(--white);
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 36px;
+  transition: var(--transition);
+}
+.testimonial-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+.testimonial-card .stars {
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.testimonial-card p {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.testimonial-card .guest-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-card .guest-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--white);
+}
+.testimonial-card .guest-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.testimonial-card .guest-title {
+  font-size: 0.8rem;
+  color: var(--gold-light);
+}
+
+/* CTA BANNER */
+.cta-banner {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  padding: 80px 0;
+  text-align: center;
+  color: var(--white);
+}
+.cta-banner h2 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.cta-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
