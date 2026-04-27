@@ -1,7 +1,3 @@
 <?php
-session_start();
-$_SESSION = [];
-session_destroy();
-header('Location: index.php');
-exit;
-?>
+$_GET['route'] = 'logout';
+require __DIR__ . '/index.php';

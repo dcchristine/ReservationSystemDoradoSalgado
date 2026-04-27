@@ -1,6 +1,3 @@
 <?php
-session_start();
-session_destroy();
-header('Location: login.php');
-exit;
-?>
+$_GET['route'] = 'admin/logout';
+require __DIR__ . '/../index.php';
