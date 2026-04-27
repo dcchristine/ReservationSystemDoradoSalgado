@@ -1,4 +1,8 @@
-# Dorado Salgado Grand Hotel - MVC Reservation System
+# Dorado Salgado Grand Hotel - Reservation System
+
+Dorado, Christine C.
+
+Salgado, James Van T.
 
 Dorado, Christine C.  
 Salgado, James Van T.  
